@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div>
+    <div class="d-flex justify-content-between align-items-center">
+    <h1>Facturas</h1>
+    <a href="{% url 'agregar_factura'%}"  class="btn btn-success btn-sm">Agregar</a> 
+</div>
+    <h1>Facturas</h1>
+    <table class="table  table-striped">
+        <tr>
+            <th>Codigo</th>
+            <th>Estado</th>
+        </tr>
+        {% for factura in facturas %}
+        <tr>
+            <td>{{factura.uuid}}</td>
+            <td>{{factura.paymentStatus}}</td>
+            <td>
+                <div>
+                    <div class="gap-2 d-flex justify-content-end">
+                    <a href="" class="btn btn-warning btn-sm">Modificar</a>
+                    <a href="" class="btn btn-danger btn-sm">Eliminar</a>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %} 

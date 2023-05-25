@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>Agregar Cargo</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-12">/
+    {{form.name.label_tag}}
+    {{form.name}}
+    </div>
+</div>
+  <button class="btn btn-primary mt-2">Guardar</button>
+</form>
+
+{% endblock %}

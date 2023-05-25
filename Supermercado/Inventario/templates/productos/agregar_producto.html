@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <h1>Agregar Producto</h1>
+    <form method="post">                   
+        {% csrf_token %} 
+        <div class="row">
+            <div class="col-6">
+            {{form.rtn.label_tag}}
+            {{form.rtn}}
+    </div>
+    <div class="col-4">
+        {{form.price.label_tag}}
+        {{form.price}}
+    </div>
+
+    <div class="col-4">
+        {{form.provider.label_tag}}
+        {{form.provider}}
+    </div>
+
+    
+        
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Guardar</button>
+</form>

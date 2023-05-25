@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <h1>Proveedor - {{proveedor.name}}</h1>
+    <p><b>RTN: </b> {{proveedor.rtn}}</p>
+    <p><b>Ciudad: </b> {{proveedor.city}}</p>
+    <p><b>Address: </b> {{proveedor.address}}</p>
+    <p><b>Email: </b> {{proveedor.email}}</p>
+    <p><b>Telefono: </b> {{proveedor.phone}}</p>
+
+    <h2>Productos del Proveedor</h2>
+    <table class="table">
+        <tr>
+            <th>NOMBRE</th>
+            <th>PRECIO</th>
+        </tr>
+        {% for producto in productos %}
+            <tr>
+                <td>{{producto.name}}</td>
+                <td>L. {{producto.price}}</td>
+            </tr>
+        {% endfor %}
+    </table> 
+{% endblock %}

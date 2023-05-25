@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <h1>Producto - {{producto.name}}</h1>
+    <p><b>Stock: </b>{{stock}}</p>
+
+    <h2>Historial de Operaciones de Inventario</h2>
+    <table class="table">
+        <tr>
+            <th>DESCRIPCION</th>
+            <th>CANTIDAD</th>
+            <th>TIPO</th>
+            <th>FECHA</th>
+        </tr>
+        {% for operacion in operaciones %}
+            <tr>
+                <td>{{operacion.description}}</td>
+                <td>{{operacion.quantity}}</td>
+                <td>{{operacion.get_type_name}}</td>
+                <td>{{operacion.createdAt}}</td>
+            </tr>
+        {% endfor %}
+    </table> 
+{% endblock %}

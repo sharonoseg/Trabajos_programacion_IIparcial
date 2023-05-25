@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div>
+    <div class="d-flex justify-content-between align-items-center">
+    <h1>Productos</h1>
+    <a href="{% url 'agregar_productos'%}"  class="btn btn-success btn-sm">Agregar</a> 
+</div>
+    <h1>Productos</h1>
+    <table class="table">
+        <tr>
+            <th>NOMBRE</th>
+            <th>PRECIO</th>
+            <th>Proveedor</th>
+            <th>ACCIONES</th>
+        </tr>
+        {% for producto in productos %}
+            <tr>
+                <td>{{producto.name}}</td>
+                <td>{{producto.price}}</td>
+                <td>{{producto.provider}}</td>
+
+                <td><a href="{% url 'obtener_producto' producto.uuid %}">Ver...</a></td>
+            </tr>
+        {% endfor %}
+    </table> 
+{% endblock %}

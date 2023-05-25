@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <h1>Agregar Proveedor</h1>
+    <form method="post">                   
+        {% csrf_token %} 
+        <div class="row">
+            <div class="col-6">
+            {{form.rtn.label_tag}}
+            {{form.rtn}}
+    </div>
+    <div class="col-6">
+        {{form.name.label_tag}}
+        {{form.name}}
+    </div>
+
+    <div class="col-12">
+        {{form.city.label_tag}}
+        {{form.city}}
+    </div>
+
+    <div class="col-12">
+        {{form.address.label_tag}}
+        {{form.address}}
+        
+    </div>
+    <div class="col-8">
+        {{form.email.label_tag}}
+        {{form.email}}
+        
+    </div>
+    <div class="col-4">
+        {{form.phone.label_tag}}
+        {{form.phone}}
+        
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Guardar</button>
+
+
+
+  </div>
+        
+        
+
+
+
+
+
+
+
+    </form>
+        {% endblock %}
